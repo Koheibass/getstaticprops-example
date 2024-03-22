@@ -9,7 +9,7 @@ export default function Home({ text }) {
 export const getStaticProps = () => {
   return {
     props: {
-      text: "はじめまして！"
+      text: "はじめまして！world"
     }
   }
 }
