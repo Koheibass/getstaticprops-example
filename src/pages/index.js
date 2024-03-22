@@ -1,15 +1,29 @@
-export default function Home({ text }) {
+import React from "react";
+
+export default function Home({ data }) {
   return (
-    <div>
-      {text}
-    </div>
-  );
+    <>
+      <h1>取得したデータ</h1>
+      {data.map((wine) => {
+        return (
+          <div keyt={wine.id}>
+            <p>名前：{wine.wine}</p>
+            <p>産地：{wine.location}</p>
+            <img src={wine.image} />
+          </div >
+        )
+      })
+
+      }
+    </>
+  )
 }
 
-export const getStaticProps = () => {
+export const getStaticProps = async () => {
+  const response = await fetch('https://api.sampleapis.com/wines/reds')
+  const data = await response.json();
+
   return {
-    props: {
-      text: "はじめまして！world"
-    }
-  }
+    props: { data },
+  };
 }
