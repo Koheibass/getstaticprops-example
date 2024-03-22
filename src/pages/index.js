@@ -3,7 +3,7 @@ import React from "react";
 export default function Home({ data }) {
   return (
     <>
-      <h1>取得したデータ</h1>
+      <h1>ワインリスト？</h1>
       {data.map((wine) => {
         return (
           <div keyt={wine.id}>
