@@ -9,6 +9,7 @@ export default function Home({ data }) {
           <div keyt={wine.id}>
             <p>名前：{wine.wine}</p>
             <p>産地：{wine.location}</p>
+            <p>ワイナリー：{wine.winery}</p>
             <img src={wine.image} />
           </div >
         )
