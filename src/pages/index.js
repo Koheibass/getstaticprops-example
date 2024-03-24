@@ -10,6 +10,7 @@ export default function Home({ data }) {
             <p>名前：{wine.wine}</p>
             <p>産地：{wine.location}</p>
             <p>ワイナリー：{wine.winery}</p>
+            <p>レーティング：{wine.rating.reviews}</p>
             <img src={wine.image} />
           </div >
         )
