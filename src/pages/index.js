@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function Home({ data }) {
+  const [searchItem, setSearchItem] = useState("");
+
+  const filteredData = data.filter((wine) =>
+    wine.wine.toLowerCase().includes(searchItem.toLowerCase())
+  );
+
   return (
     <>
+      <input
+        type="text"
+        placeholder="検索"
+        value={searchItem}
+        onChange={(e) => setSearchItem(e.target.value)}
+      />
       <h1>ワインリスト？</h1>
-      {data.map((wine) => {
+      {filteredData.map((wine) => {
         return (
           <div keyt={wine.id}>
             <p>名前：{wine.wine}</p>
